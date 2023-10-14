@@ -10,8 +10,37 @@ on:
     branches: [ "main", "master" ]
 
 jobs:
-  build:
+  project-a-build:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./project-a
+    strategy:
+      matrix:
+        node-version: [ 14.x, 16.x ]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+      - run: npm ci
+      - name: prisma client 생성
+        run: npx prisma generate
+      - name: lint 적용
+        run: npm run lint
+      - name: build
+        run: npm run build
+      - name: 테스트
+        run: npm run test
+  project-b-build:
+    runs-on: ubuntu-latest
+
+    env:
+      working-directory: ./project-b
 
     services:
       postgres:
