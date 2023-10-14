@@ -17,8 +17,6 @@ jobs:
     strategy:
       matrix:
         node-version: [ 14.x, 16.x ]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -26,10 +24,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+          cache-dependency-path: './project-a/**/package-lock.json'
       - run: npm ci
-      - name: prisma client 생성
-        run: npx prisma generate
       - name: lint 적용
         run: npm run lint
       - name: build
@@ -69,7 +65,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          cache-dependency-path:  '**/package-lock.json'
+          cache-dependency-path:  './project-b/**/package-lock.json'
       - run: npm ci
       - name: prisma client 생성
         run: npx prisma generate
