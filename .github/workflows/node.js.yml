@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          cache-dependency-path: 'project-a/package-lock.json'
+          cache-dependency-path: '${{github.workspace}}/package-lock.json'
       - run: npm ci
       - name: lint 적용
         run: npm run lint
@@ -67,7 +67,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          cache-dependency-path:  'project-b/package-lock.json'
+          cache-dependency-path:  '${{github.workspace}}/package-lock.json'
       - run: npm ci
       - name: prisma client 생성
         run: npx prisma generate
