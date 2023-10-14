@@ -12,8 +12,7 @@ on:
 jobs:
   project-a-build:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./project_a
+
     strategy:
       matrix:
         node-version: [ 14.x, 16.x ]
@@ -28,7 +27,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: project_a/package-lock.json'
 
-      - run: npm ci
+      - run: cd ./project_a && npm ci
       - name: lint 적용
         run: npm run lint
       - name: build
