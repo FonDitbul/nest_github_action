@@ -12,8 +12,8 @@ on:
 jobs:
   project-a-build:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./project-a
+#    env:
+#      working-directory: ./project-a
     strategy:
       matrix:
         node-version: [ 14.x, 16.x ]
@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-#          cache-dependency-path: ./project-a/package-lock.json'
+          cache-dependency-path: project_a/package-lock.json'
       - run: npm ci
       - name: lint 적용
         run: npm run lint
@@ -38,8 +38,8 @@ jobs:
   project-b-build:
     runs-on: ubuntu-latest
 
-    env:
-      working-directory: ./project-b
+#    env:
+#      working-directory: ./project-b
 
     services:
       postgres:
@@ -68,7 +68,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-#          cache-dependency-path: ./project-b/package-lock.json
+          cache-dependency-path: project_b/package-lock.json
       - run: npm ci
       - name: prisma client 생성
         run: npx prisma generate
