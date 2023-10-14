@@ -12,8 +12,8 @@ on:
 jobs:
   project-a-build:
     runs-on: ubuntu-latest
-#    env:
-#      working-directory: ./project-a
+    env:
+      working-directory: ./project_a
     strategy:
       matrix:
         node-version: [ 14.x, 16.x ]
@@ -27,7 +27,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           cache-dependency-path: project_a/package-lock.json'
-      - run: cd ./project_a
+
       - run: npm ci
       - name: lint 적용
         run: npm run lint
@@ -39,8 +39,8 @@ jobs:
   project-b-build:
     runs-on: ubuntu-latest
 
-#    env:
-#      working-directory: ./project-b
+    env:
+      working-directory: ./project_b
 
     services:
       postgres:
@@ -63,9 +63,6 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - run: ls -al ../
-      - run: ls -al
-      - run: pwd
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
