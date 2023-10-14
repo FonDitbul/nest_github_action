@@ -23,6 +23,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: ls -al ../
       - run: ls -al
+      - run: pwd
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -64,6 +65,9 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+      - run: ls -al ../
+      - run: ls -al
+      - run: pwd
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
