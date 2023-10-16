@@ -51,10 +51,10 @@ jobs:
       - run: pwd
       - run: ls -al
       - name: project_a build
-        run: nest build project_a
+        run: nest build -p apps/project_a/tsconfig.app.json project_a
 
       - name: project_b build
-        run: nest build project_b
+        run: nest build -p apps/project_b/tsconfig.app.json project_b
 
       - name: 테스트
         run: npm run test

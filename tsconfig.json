@@ -8,7 +8,6 @@
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "sourceMap": true,
-    "rootDir": "./src",
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": false,
@@ -17,10 +16,8 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "paths": {}
+    "noFallthroughCasesInSwitch": false
   },
-  "files": [],
   "references": [
     {
       "path": "./packages/utils"
