@@ -4,8 +4,7 @@
   "root": "apps/cats-api",
   "monorepo": true,
   "compilerOptions": {
-    "webpack": true,
-    "tsConfigPath": "apps/project_a/tsconfig.app.json"
+    "tsConfigPath": "./tsconfig.build.json"
   },
   "projects": {
     "project_a": {
@@ -23,7 +22,7 @@
       "entryFile": "main",
       "sourceRoot": "apps/project_b/src",
       "compilerOptions": {
-        "tsConfigPath": "./apps/project_b/tsconfig.app.json"
+        "tsConfigPath": "apps/project_b/tsconfig.app.json"
       }
     },
     "interfaces": {
