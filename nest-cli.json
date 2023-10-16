@@ -32,7 +32,7 @@
       "entryFile": "index",
       "sourceRoot": "packages/interfaces/src",
       "compilerOptions": {
-        "tsConfigPath": "packages/interfaces/tsconfig.lib.json"
+        "tsConfigPath": "packages/interfaces/tsconfig.json"
       }
     },
     "utils": {
@@ -41,16 +41,7 @@
       "entryFile": "index",
       "sourceRoot": "packages/utils/src",
       "compilerOptions": {
-        "tsConfigPath": "packages/utils/tsconfig.lib.json"
-      }
-    },
-    "app": {
-      "type": "application",
-      "root": "apps/app",
-      "entryFile": "main",
-      "sourceRoot": "apps/app/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/app/tsconfig.app.json"
+        "tsConfigPath": "packages/utils/tsconfig.json"
       }
     }
   }

@@ -45,6 +45,7 @@ jobs:
       - run: npm ci
       - name: prisma client 생성
         run: npx prisma generate
+
       - name: lint 적용
         run: npm run format
 
