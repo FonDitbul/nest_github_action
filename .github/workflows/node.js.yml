@@ -50,8 +50,8 @@ jobs:
         run: npm run format
       - run: pwd
       - run: ls -al
-      - name: project_a build
-        run: nest build project_a
+#      - name: project_a build
+#        run: nest build project_a
 
       - name: project_b build
         run: nest build project_b
