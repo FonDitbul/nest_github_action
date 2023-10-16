@@ -14,7 +14,7 @@
       "entryFile": "main",
       "sourceRoot": "apps/project_a/src",
       "compilerOptions": {
-        "tsConfigPath": "./apps/project_a/tsconfig.app.json"
+        "tsConfigPath": "apps/project_a/tsconfig.app.json"
       }
     },
     "project_b": {
