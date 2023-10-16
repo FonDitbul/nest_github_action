@@ -1,4 +1,57 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/project_a/src",
+  "root": "apps/cats-api",
+  "monorepo": true,
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/project_a/tsconfig.app.json"
+  },
+  "projects": {
+    "project_a": {
+      "type": "application",
+      "root": "apps/project_a",
+      "entryFile": "main",
+      "sourceRoot": "apps/project_a/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/project_a/tsconfig.app.json"
+      }
+    },
+    "project_b": {
+      "type": "application",
+      "root": "apps/project_b",
+      "entryFile": "main",
+      "sourceRoot": "apps/project_b/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/project_b/tsconfig.app.json"
+      }
+    },
+    "interfaces": {
+      "type": "library",
+      "root": "packages/interfaces",
+      "entryFile": "index",
+      "sourceRoot": "packages/interfaces/src",
+      "compilerOptions": {
+        "tsConfigPath": "packages/interfaces/tsconfig.lib.json"
+      }
+    },
+    "utils": {
+      "type": "library",
+      "root": "packages/utils",
+      "entryFile": "index",
+      "sourceRoot": "packages/utils/src",
+      "compilerOptions": {
+        "tsConfigPath": "packages/utils/tsconfig.lib.json"
+      }
+    },
+    "app": {
+      "type": "application",
+      "root": "apps/app",
+      "entryFile": "main",
+      "sourceRoot": "apps/app/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/app/tsconfig.app.json"
+      }
+    }
+  }
 }
