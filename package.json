@@ -8,7 +8,7 @@
   "scripts": {
     "prebuild": "rimraf apps/project_a/dist",
     "build": "nest build",
-    "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
+    "format": "prettier --write \"apps/**/*.ts\" \"./packages/**/*.ts\" \"./front/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
