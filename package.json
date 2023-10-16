@@ -10,7 +10,7 @@
     "format": "prettier --write \"apps/**/*.ts\" \"./packages/**/*.ts\" \"./front/**/*.ts\"",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
+    "test:cov": "jest --coverage"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
