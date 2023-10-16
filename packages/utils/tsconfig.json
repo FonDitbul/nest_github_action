@@ -8,8 +8,8 @@
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
+    "rootDir": "./src",
+    "outDir": "./build",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
@@ -17,13 +17,5 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
-  },
-  "references": [
-    {
-      "path": "./packages/utils"
-    },
-    {
-      "path": "./packages/interfaces"
-    }
-  ]
+  }
 }
