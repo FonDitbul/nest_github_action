@@ -46,7 +46,11 @@ jobs:
         run: npx prisma generate
       - name: lint 적용
         run: npm run format
-      - name: build
-        run: npm run build
+      - name: project_a build
+        run: nest build project_a
+
+      - name: project_b build
+        run: nest build project_b
+
       - name: 테스트
         run: npm run test
