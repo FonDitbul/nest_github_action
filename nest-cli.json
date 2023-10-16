@@ -1,7 +1,7 @@
 {
   "collection": "@nestjs/schematics",
   "sourceRoot": "apps/project_a/src",
-  "root": "apps/cats-api",
+  "root": "./",
   "monorepo": true,
   "compilerOptions": {
     "tsConfigPath": "./tsconfig.build.json"
